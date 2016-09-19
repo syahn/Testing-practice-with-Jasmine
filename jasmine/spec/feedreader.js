@@ -49,9 +49,10 @@ $(function() {
 
           it('shows when icon is clicked and hides when icon is clicked again', function() {
               $('.menu-icon-link').trigger('click');
-              expect(document.body.className).not.toEqual('menu-hidden');
+              expect($('body').hasClass('menu-hidden')).toEqual(false);
               $('.menu-icon-link').trigger('click');
-              expect(document.body.className).toEqual('menu-hidden');
+              expect($('body').hasClass('menu-hidden')).toEqual(true);
+
           });
     });
 
@@ -68,7 +69,7 @@ $(function() {
          });
 
          it('have at least one entry', function() {
-             expect($('.feed .entry-link').children().length).not.toEqual(0);
+             expect($('.feed .entry').length).not.toEqual(0);
          });
 
 
